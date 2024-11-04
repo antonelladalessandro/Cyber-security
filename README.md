@@ -119,7 +119,7 @@ tracert IP
 
 Traceroute utilizza il protocollo ICMP per rivelare gli indirizzi IP dei router, inviando pacchetti con un valore **TTL** (Time To Live) inizialmente impostato a 1. Quando un router riceve un pacchetto, decrementa il TTL; se il TTL arriva a 0, il pacchetto viene scartato e il router invia un messaggio ICMP di errore.
 
-## BANNER GRABBING
+# BANNER GRABBING
 
 Il banner grabbing è una tecnica utilizzata per ottenere informazioni su un servizio o un'applicazione in esecuzione su una macchina remota, connettendosi a una specifica porta di rete e "leggendo" il banner, ossia il messaggio iniziale che il servizio invia alla connessione. Questo banner può includere dettagli come il tipo di servizio, la versione dell’applicazione o del sistema operativo, e talvolta altre informazioni rilevanti.
 

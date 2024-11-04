@@ -1,3 +1,28 @@
+# ETHICAL HACKING
+
+L'ethical hacking, o hacking etico, è il processo di valutazione della sicurezza di un sistema o di una rete attraverso tecniche e strumenti simili a quelli utilizzati dai malintenzionati, con l'obiettivo di identificare vulnerabilità e migliorare la sicurezza. Le fasi principali dell'ethical hacking possono essere suddivise come segue:
+
+1. **Pianificazione e Ricognizione**:
+- In questa fase, l'hacker etico definisce l'ambito del test e raccoglie informazioni sui sistemi target. Vengono utilizzati strumenti di scansione, analisi delle reti e social engineering per ottenere informazioni rilevanti.
+2. **Scansione**:
+- Si tratta di identificare attivamente le porte aperte, i servizi in esecuzione e le vulnerabilità nei sistemi. Gli strumenti di scansione, come Nmap e Nessus, possono essere utilizzati per questa fase.
+
+3. **Accesso**:
+- In questa fase, l'hacker etico tenta di sfruttare le vulnerabilità identificate per guadagnare accesso non autorizzato ai sistemi. Questo può includere l'uso di exploit e tecniche di offuscamento.
+
+4. **Mantenimento dell'Accesso**:
+- Dopo aver ottenuto l'accesso, gli hacker etici possono implementare metodi per mantenere l'accesso al sistema e testare la sicurezza delle contromisure in atto.
+
+5. **Analisi e Reporting**:
+- Infine, vengono analizzati i risultati delle fasi precedenti e redatto un rapporto dettagliato. Questo rapporto dovrebbe includere le vulnerabilità trovate, le tecniche utilizzate e le raccomandazioni per migliorare la sicurezza.
+
+6. **Risoluzione e Verifica**:
+- Dopo la presentazione del rapporto, il team di sicurezza del cliente risolve le vulnerabilità e implementa le raccomandazioni. Successivamente, l'hacker etico può effettuare un secondo test per verificare che le vulnerabilità siano state corrette.
+
+Ogni fase richiede un approccio etico e una collaborazione con il cliente per garantire che le attività di hacking non causino danni e rispettino le leggi e le normative vigenti.
+
+
+
 # RICOGNIZIONE
 
 La **ricognizione** (o "recon") è una fase preliminare per raccogliere informazioni su un bersaglio, e rappresenta il primo passo della "Unified Kill Chain" per ottenere un punto d'accesso iniziale. La ricognizione si divide in:

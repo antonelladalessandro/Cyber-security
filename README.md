@@ -60,29 +60,10 @@ Mentre la ricognizione passiva raccoglie informazioni senza contatto diretto, la
 
 Durante la ricognizione attiva, ogni connessione può lasciare tracce nei log del target, mostrando dati come l'indirizzo IP e la durata della connessione. Alcune connessioni possono sembrare normali, come la semplice navigazione web, che può essere sfruttata dal red team per passare inosservati.
 
-### WEB BROWSER
-
-Il browser web può essere uno strumento utile per raccogliere informazioni su un target, in quanto è disponibile su tutti i sistemi. 
-
-A livello di trasporto, il browser si connette di default a:
-
-- La porta TCP 80 quando il sito è accessibile tramite HTTP
-- La porta TCP 443 quando il sito è accessibile tramite HTTPS
-
-Poiché le porte 80 e 443 sono predefinite per HTTP e HTTPS, non vengono visualizzate nella barra degli indirizzi. Tuttavia, è possibile utilizzare porte personalizzate per accedere a un servizio. 
-
-Durante la navigazione, puoi aprire gli Strumenti per sviluppatori premendo Ctrl+Shift+I su PC o Option + Command + I (⌥ + ⌘ + I) su Mac. Questi strumenti consentono di ispezionare vari elementi scambiati tra il browser e il server remoto, come file JavaScript, cookie e la struttura delle cartelle del contenuto del sito.
-
-Ci sono anche molte estensioni per Firefox e Chrome utili per i test di penetrazione. Ecco alcuni esempi:
-
-- **FoxyProxy**: permette di cambiare rapidamente il server proxy utilizzato per accedere a un sito. È comodo quando si usano strumenti come Burp Suite.
-- **User-Agent Switcher and Manager**: consente di simulare l'accesso a un sito da un altro sistema operativo o browser, ad esempio apparendo come se si stesse navigando da un iPhone.
-- **Wappalyzer**: fornisce informazioni sulle tecnologie utilizzate nei siti visitati, utile per raccogliere dati come un utente normale.
-
-Il comando **ping** è uno strumento utile per verificare la connettività di rete tra due sistemi. In modo semplice, invia un pacchetto a un sistema remoto e riceve una risposta, permettendo di concludere che il sistema remoto è attivo e la rete funziona correttamente. 
 
 ### PING
 
+Il comando **ping** è uno strumento utile per verificare la connettività di rete tra due sistemi. In modo semplice, invia un pacchetto a un sistema remoto e riceve una risposta, permettendo di concludere che il sistema remoto è attivo e la rete funziona correttamente. 
 Ping utilizza pacchetti ICMP (Internet Control Message Protocol), in particolare il tipo 8 per l'echo e il tipo 0 per la risposta. 
 
 Puoi utilizzare il comando `ping` seguito dall'indirizzo IP o dal nome host del target, come `ping MACHINE_IP` o `ping HOSTNAME`. Se non specifichi un conteggio, il ping continuerà fino a quando non lo interrompi con CTRL+C. In Linux, puoi usare `ping -c 10 MACHINE_IP` per inviare dieci pacchetti.

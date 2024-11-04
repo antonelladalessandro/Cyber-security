@@ -27,5 +27,5 @@ nslookup NOME_DOMINIO
 Per aggiungere il record:
 
 ```
- nslookup -type=RECORD NOME_DOMINIO
+nslookup -type=RECORD NOME_DOMINIO
 ```

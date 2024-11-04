@@ -150,6 +150,9 @@ nc IP_DEST PORTA
 
 Netcat può anche ascoltare su una porta TCP. Usando `nc -vnlp 1234`, un sistema può aprire la porta 1234 e attendere connessioni. I parametri -v, -n, -l e -p specificano rispettivamente output verboso, nessuna risoluzione DNS, modalità ascolto e numero della porta. La modalità echo è ottenibile avviando Netcat su due terminali, uno lato server in ascolto e uno lato client in connessione. Qualsiasi messaggio inviato da un lato viene trasmesso e visualizzato dall'altro tramite il tunnel TCP.
 
+![immagine](https://github.com/user-attachments/assets/5f17036d-bfe1-4a62-b82a-13be288d9927)
+
+
 ### TABELLA RIASSUNTIVA
 
 ![immagine](https://github.com/user-attachments/assets/e06a364c-873d-444a-9598-98abf8cccb96)

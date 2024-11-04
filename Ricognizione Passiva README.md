@@ -15,3 +15,17 @@ Per ottenere queste informazioni, dobbiamo usare un client whois o un servizio o
 ```
 whois NOME_DOMINIO
 ```
+
+# NSLOOKUP
+
+Per trovare l'indirizzo IP di un nome di dominio usando nslookup (Name Server Look Up). È necessario eseguire il comando nslookup:
+
+```
+nslookup NOME_DOMINIO
+```
+
+Per aggiungere il record:
+
+```
+ nslookup -type=RECORD NOME_DOMINIO
+```

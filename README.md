@@ -119,3 +119,38 @@ tracert IP
 
 Traceroute utilizza il protocollo ICMP per rivelare gli indirizzi IP dei router, inviando pacchetti con un valore **TTL** (Time To Live) inizialmente impostato a 1. Quando un router riceve un pacchetto, decrementa il TTL; se il TTL arriva a 0, il pacchetto viene scartato e il router invia un messaggio ICMP di errore.
 
+## BANNER GRABBING
+
+Il banner grabbing è una tecnica utilizzata per ottenere informazioni su un servizio o un'applicazione in esecuzione su una macchina remota, connettendosi a una specifica porta di rete e "leggendo" il banner, ossia il messaggio iniziale che il servizio invia alla connessione. Questo banner può includere dettagli come il tipo di servizio, la versione dell’applicazione o del sistema operativo, e talvolta altre informazioni rilevanti.
+
+USIAMO: NMAP (-sV), TELNET E NETCAT.
+
+### TELNET
+
+Il protocollo TELNET, sviluppato nel 1969, permette di comunicare con un sistema remoto tramite interfaccia a riga di comando (CLI) e utilizza la porta predefinita 23. Dal punto di vista della sicurezza, TELNET non cripta i dati, quindi invia in chiaro credenziali come username e password, rendendole vulnerabili. SSH (Secure SHell) è un’alternativa più sicura.
+
+Nonostante TELNET sia spesso evitato per l’amministrazione remota, è ancora utile per altri scopi, come la connessione a servizi su TCP per raccogliere informazioni sul sistema remoto (banner grabbing). Utilizzando il comando 
+```
+telnet IP PORTA
+``` 
+è possibile connettersi a un servizio TCP e inviare messaggi, purché il servizio non richieda crittografia.
+
+Per esempio, per scoprire informazioni su un server web che ascolta sulla porta 80, si può inviare il comando `GET / HTTP/1.1` per richiedere la pagina principale (o specificare altre pagine). È necessario anche specificare un host, es. `host: esempio`, e premere invio due volte. In risposta, si riceveranno dettagli sul server, inclusi il tipo e la versione (ad esempio `Server: nginx/1.6.2`), utili per identificare il software installato.
+
+### NETCAT
+
+Netcat, o nc, è uno strumento versatile per i pentester, poiché supporta sia i protocolli TCP che UDP. Può agire sia come client per connettersi a una porta in ascolto, sia come server che ascolta su una porta scelta. Questo lo rende ideale come client o server semplice su TCP o UDP.
+
+È possibile usare Netcat per connettersi a un server e raccogliere informazioni, come il banner del servizio. Ad esempio, il comando:
+``` 
+nc IP_DEST PORTA
+``` 
+
+è simile a `telnet IP_DEST PORTA` e permette di connettersi a una porta e richiedere una pagina HTTP con `GET / HTTP/1.1`. Specificando `host: netcat`, si ottiene una risposta con i dettagli del server, come la versione (es. `Server: nginx/1.6.2`).
+
+Netcat può anche ascoltare su una porta TCP. Usando `nc -vnlp 1234`, un sistema può aprire la porta 1234 e attendere connessioni. I parametri -v, -n, -l e -p specificano rispettivamente output verboso, nessuna risoluzione DNS, modalità ascolto e numero della porta. La modalità echo è ottenibile avviando Netcat su due terminali, uno lato server in ascolto e uno lato client in connessione. Qualsiasi messaggio inviato da un lato viene trasmesso e visualizzato dall'altro tramite il tunnel TCP.
+
+### TABELLA RIASSUNTIVA
+
+![immagine](https://github.com/user-attachments/assets/e06a364c-873d-444a-9598-98abf8cccb96)
+

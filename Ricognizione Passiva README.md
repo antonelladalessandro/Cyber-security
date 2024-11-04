@@ -47,3 +47,7 @@ Per specificare il tipo di record, usiamo:
 ```
 dig NOME_DOMINIO RECORD
 ```
+
+### TABELLA RIASSUNTIVA
+
+![immagine](https://github.com/user-attachments/assets/28c97287-2147-4cb8-9f25-31e97e81ef82)

@@ -1,6 +1,6 @@
 # WHOIS
 
-WHOIS è un protocollo di richiesta e risposta che segue la specifica RFC 3912. Un server WHOIS ascolta sulla porta TCP 43 le richieste in arrivo. Il registrar di un dominio è responsabile della gestione dei record WHOIS per i nomi di dominio che sta affittando. Il server WHOIS risponde con varie informazioni relative al dominio richiesto. Di particolare interesse, possiamo scoprire: 
+**WHOIS** è un protocollo di richiesta e risposta che segue la specifica RFC 3912. Un server WHOIS ascolta sulla porta TCP 43 le richieste in arrivo. Il registrar di un dominio è responsabile della gestione dei record WHOIS per i nomi di dominio che sta affittando. Il server WHOIS risponde con varie informazioni relative al dominio richiesto. Di particolare interesse, possiamo scoprire: 
 
 • Registrar: tramite quale registrar è stato registrato il nome di dominio?
 
@@ -28,4 +28,16 @@ Per aggiungere il record:
 
 ```
 nslookup -type=RECORD NOME_DOMINIO
+```
+
+# DIG
+
+Per ricerche DNS avanzate e funzionalità aggiuntive, puoi usare dig (Domain Information Groper). Ecco come usare dig per cercare i record MX e confrontarli con nslookup. Si può usare: 
+```
+dig NOME_DOMINIO
+```
+
+Per specificare il tipo di record, usiamo:
+```
+dig NOME_DOMINIO RECORD
 ```

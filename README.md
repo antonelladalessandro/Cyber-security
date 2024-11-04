@@ -4,7 +4,7 @@ L'ethical hacking, o hacking etico, è il processo di valutazione della sicurezz
 
 1. **Pianificazione e Ricognizione**:
 - In questa fase, l'hacker etico definisce l'ambito del test e raccoglie informazioni sui sistemi target. Vengono utilizzati strumenti di scansione, analisi delle reti e social engineering per ottenere informazioni rilevanti.
-2. **Scansione**:
+2. **Scansione (banner grabbing)**:
 - Si tratta di identificare attivamente le porte aperte, i servizi in esecuzione e le vulnerabilità nei sistemi. Gli strumenti di scansione, come Nmap e Nessus, possono essere utilizzati per questa fase.
 
 3. **Accesso**:
@@ -153,4 +153,80 @@ Netcat può anche ascoltare su una porta TCP. Usando `nc -vnlp 1234`, un sistema
 ### TABELLA RIASSUNTIVA
 
 ![immagine](https://github.com/user-attachments/assets/e06a364c-873d-444a-9598-98abf8cccb96)
+
+# ACCESSO
+
+Dopo aver trovato le vulnerabilità, utilizzo degli exploit come il tool **Metasploit**.
+
+### METASPLOIT
+
+Metasploit è il framework di exploit più utilizzato, uno strumento potente che supporta tutte le fasi di un test di penetrazione, dalla raccolta di informazioni fino al post-exploit.
+
+Esistono due versioni principali di Metasploit:<br>
+	1. **Metasploit Pro**: versione commerciale con interfaccia grafica (GUI) che facilita l’automazione e la gestione delle attività. <br>
+	2. **Metasploit Framework**: versione open-source utilizzabile tramite riga di comando, focalizzata sui test di penetrazione su distribuzioni Linux. <br>
+Il Metasploit Framework comprende strumenti per raccolta di informazioni, scansione, exploit, sviluppo di exploit e post-exploit. È utilizzato soprattutto per i test di penetrazione, ma anche per la ricerca e sviluppo di vulnerabilità.
+
+I componenti principali sono:<br>
+	• **msfconsole**: interfaccia principale a riga di comando.<br>
+	• **Moduli**: includono exploit, scanner, payload e altro.<br>
+	• **Tool**: strumenti autonomi per ricerca e valutazione delle vulnerabilità, come msfvenom (coperto in questo modulo), pattern_create e pattern_offset (utili nello sviluppo di exploit, ma fuori dall’ambito del modulo).<br>
+
+Concetti chiave:<br>
+	• **Vulnerabilità**: una falla nel sistema che può esporre informazioni riservate o permettere l’esecuzione di codice non autorizzato.<br>
+	• **Exploit**: pezzo di codice che sfrutta una vulnerabilità su un sistema target.<br>
+	• **Payload**: codice che esegue un'azione desiderata (ad es. accesso al sistema target) una volta sfruttata una vulnerabilità.<br>
+
+Principali Moduli di Metasploit:<br>
+	1. **Auxiliary**: presenti all'interno del framework metasploit, include scanner, crawler e altri strumenti di supporto.<br>
+	2. **Encoders**: codifica exploit e payload per evitare che un antivirus li riconosca. Gli antivirus nasati sulla firma hanno un database di minacce conosciute, se la firma corrisponde allora è un virus. 
+	3. **Evasion**: tentano di eludere gli antivirus.<br>
+	4. **Exploits**: organizzati per tipo di sistema target (es. Linux, Windows). <br>
+	5. **NOPs**: utilizzati come riempimento per standardizzare la dimensione dei payload.<br>
+	6. **Payloads**: il codice che viene lanciato, quello che permette poi di dare i comandi.<br>
+		○ Adapters: converte i payload in vari formati.<br>
+		○ Singles: payload auto-contenuti che non richiedono download aggiuntivi.<br>
+		○ Stagers e Stages: i “Stagers” creano una connessione al sistema target e poi scaricano il payload (Stage) completo.<br>
+	7. **Post**: moduli usati nella fase post-exploit, per attività di controllo e raccolta informazioni sul sistema compromesso.
+
+#### COMANDI METASPLOIT
+
+
+
+# POST EXPLOITATION
+La fase di **post-exploitation** è il momento in cui, dopo essere riusciti a ottenere l'accesso a un sistema target, il penetration tester (o ethical hacker) sfrutta questo accesso per raccogliere informazioni più dettagliate e consolidare il controllo sul sistema. Lo scopo è sia quello di valutare il potenziale impatto di un’intrusione sia di ottenere informazioni che possono essere usate per proseguire l’attacco, espandendosi a altre parti della rete.
+
+Ecco le principali attività di post-exploitation:
+
+### 1. **Raccolta di Informazioni Sensibili**
+   - **File e Documenti Importanti**: Esplorare cartelle, leggere file di configurazione o documenti che potrebbero contenere informazioni sensibili (come dati aziendali, informazioni sui dipendenti, credenziali di accesso, ecc.).
+   - **Credenziali**: Cercare password o chiavi di accesso salvate in file di testo o nel sistema, a volte memorizzate nelle impostazioni del browser, nelle applicazioni o nelle cache.
+
+### 2. **Privilege Escalation (Escalation dei Privilegi)**
+   - L'obiettivo è ottenere privilegi più alti (come i permessi di amministratore/root), che permettono un controllo maggiore del sistema e l’accesso a più risorse.
+   - La privilege escalation può avvenire sfruttando vulnerabilità locali, errori di configurazione, o utilizzando strumenti di ricerca automatizzata delle vulnerabilità.
+
+### 3. **Persistenza**
+   - Stabilire un accesso continuato al sistema anche in caso di riavvio o disconnessione dell’utente.
+   - Si utilizzano backdoor, script di startup, o modifiche nei servizi di sistema che riavviano il punto di accesso compromesso.
+
+### 4. **Movimento Laterale**
+   - Cercare e compromettere altri sistemi nella stessa rete (o vicini), approfittando dei permessi acquisiti e della posizione interna al network.
+   - Usare il sistema compromesso come base per attaccare altri dispositivi, applicazioni o server collegati.
+
+### 5. **Raccolta di Informazioni sulla Rete e sull’Infrastruttura**
+   - Esplorare la rete interna, mappare l’infrastruttura, raccogliere dettagli sui dispositivi e rilevare altri punti di vulnerabilità.
+   - Moduli come **scanner**, **sniffer** e **parser** di Metasploit possono essere utilizzati per ottenere informazioni sulla topologia di rete, sugli indirizzi IP interni e sui servizi in esecuzione.
+
+### 6. **Rimozione delle Tracce**
+   - Pulizia dei log di sistema, rimozione dei file temporanei e cancellazione delle tracce lasciate per ridurre le possibilità di rilevamento.
+   - Anche se in ambito etico il penetration tester generalmente documenta il processo senza rimuovere tracce, in un contesto reale l'attaccante cercherebbe di farlo.
+
+In Metasploit, i **moduli post** sono quelli dedicati al post-exploitation. Si trovano sotto categorie come:
+- **gather** per raccogliere informazioni;
+- **escalation** per il privilege escalation;
+- **networking** per muoversi lateralmente;
+- **persistence** per mantenere l'accesso.
+
+Questa fase è cruciale perché rappresenta il vero valore di un attacco: permette di massimizzare l'accesso ottenuto e capire in che misura una vulnerabilità compromette la sicurezza complessiva di una rete.
 

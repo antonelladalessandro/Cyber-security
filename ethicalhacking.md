@@ -79,7 +79,7 @@ dig NOME_DOMINIO RECORD
 
 ![immagine](https://github.com/user-attachments/assets/28c97287-2147-4cb8-9f25-31e97e81ef82)
 
-##### Siti utili
+### SITI UTILI
 shodan
 dnsdumpster
 

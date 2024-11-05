@@ -63,3 +63,26 @@ Utilizza un "host zombie" (un dispositivo inattivo con indirizzo IP statico e pr
 
 ```-F```
 Scansione veloce delle porte.
+
+# LINUX
+
+**Linux** è un sistema operativo open source, noto per la sua flessibilità, sicurezza e per essere altamente personalizzabile. Linux è gratuito ed è basato su **Unix**, un sistema operativo sviluppato negli anni '70, da cui eredita stabilità e solidità. 
+
+**Caratteristiche principali di Linux**:
+1. **Open Source**: Il codice sorgente di Linux è liberamente disponibile, e chiunque può modificarlo, migliorarlo o distribuirlo.
+2. **Distribuzioni (distro)**: Linux non è un sistema operativo unico, ma piuttosto una base su cui sono costruite diverse versioni, dette distribuzioni, come Ubuntu, Fedora, Debian, CentOS e molte altre.
+3. **Sicurezza e Stabilità**: Linux è noto per la sua sicurezza e affidabilità, motivo per cui è utilizzato per i server, i supercomputer e anche in ambienti sensibili.
+4. **Multi-utente e Multi-tasking**: Linux permette a più utenti di lavorare sullo stesso sistema contemporaneamente e supporta il multitasking, eseguendo più processi insieme.
+
+**Componenti principali di Linux**:
+- **Kernel**: Il cuore del sistema operativo, gestisce le risorse hardware e l’interfacciamento con i componenti del sistema.
+- **Shell**: L’interfaccia a riga di comando (CLI), che permette agli utenti di comunicare con il sistema tramite comandi.
+- **File System**: Linux utilizza una struttura gerarchica di directory per organizzare i file e le cartelle.
+
+## COMANDI
+
+```pwd``` (Print Working Directory) Lo uso per capire dove mi trovo nell’albero.
+
+```cd``` Lo uso per spostarmi da una cartella all'altra.
+
+

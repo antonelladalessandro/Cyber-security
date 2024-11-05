@@ -79,6 +79,10 @@ dig NOME_DOMINIO RECORD
 
 ![immagine](https://github.com/user-attachments/assets/28c97287-2147-4cb8-9f25-31e97e81ef82)
 
+##### Siti utili
+shodan
+dnsdumpster
+
 ## RICOGNIZIONE ATTIVA
 
 Mentre la ricognizione passiva raccoglie informazioni senza contatto diretto, la ricognizione attiva implica un’interazione con il target, come una visita o una connessione diretta al sistema, per esempio verificando se una porta SSH è aperta. Tuttavia, prima di procedere, è essenziale ottenere un'autorizzazione legale dal cliente.

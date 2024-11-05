@@ -205,27 +205,27 @@ La fase di **post-exploitation** è il momento in cui, dopo essere riusciti a ot
 
 Ecco le principali attività di post-exploitation:
 
-### 1. **Raccolta di Informazioni Sensibili**
+ 1. **Raccolta di Informazioni Sensibili**
    - **File e Documenti Importanti**: Esplorare cartelle, leggere file di configurazione o documenti che potrebbero contenere informazioni sensibili (come dati aziendali, informazioni sui dipendenti, credenziali di accesso, ecc.).
    - **Credenziali**: Cercare password o chiavi di accesso salvate in file di testo o nel sistema, a volte memorizzate nelle impostazioni del browser, nelle applicazioni o nelle cache.
 
-### 2. **Privilege Escalation (Escalation dei Privilegi)**
+ 2. **Privilege Escalation (Escalation dei Privilegi)**
    - L'obiettivo è ottenere privilegi più alti (come i permessi di amministratore/root), che permettono un controllo maggiore del sistema e l’accesso a più risorse.
    - La privilege escalation può avvenire sfruttando vulnerabilità locali, errori di configurazione, o utilizzando strumenti di ricerca automatizzata delle vulnerabilità.
 
-### 3. **Persistenza**
+ 3. **Persistenza**
    - Stabilire un accesso continuato al sistema anche in caso di riavvio o disconnessione dell’utente.
    - Si utilizzano backdoor, script di startup, o modifiche nei servizi di sistema che riavviano il punto di accesso compromesso.
 
-### 4. **Movimento Laterale**
+ 4. **Movimento Laterale**
    - Cercare e compromettere altri sistemi nella stessa rete (o vicini), approfittando dei permessi acquisiti e della posizione interna al network.
    - Usare il sistema compromesso come base per attaccare altri dispositivi, applicazioni o server collegati.
 
-### 5. **Raccolta di Informazioni sulla Rete e sull’Infrastruttura**
+ 5. **Raccolta di Informazioni sulla Rete e sull’Infrastruttura**
    - Esplorare la rete interna, mappare l’infrastruttura, raccogliere dettagli sui dispositivi e rilevare altri punti di vulnerabilità.
    - Moduli come **scanner**, **sniffer** e **parser** di Metasploit possono essere utilizzati per ottenere informazioni sulla topologia di rete, sugli indirizzi IP interni e sui servizi in esecuzione.
 
-### 6. **Rimozione delle Tracce**
+ 6. **Rimozione delle Tracce**
    - Pulizia dei log di sistema, rimozione dei file temporanei e cancellazione delle tracce lasciate per ridurre le possibilità di rilevamento.
    - Anche se in ambito etico il penetration tester generalmente documenta il processo senza rimuovere tracce, in un contesto reale l'attaccante cercherebbe di farlo.
 

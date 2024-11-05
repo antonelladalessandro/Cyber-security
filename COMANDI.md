@@ -85,4 +85,65 @@ Scansione veloce delle porte.
 
 ```cd``` Lo uso per spostarmi da una cartella all'altra.
 
+```cd ..``` Ti permette di andare su di un livello.
+
+```cd../..``` Ti permette di tornare indietro di due cartelle.
+
+```cd-``` Per tornare indietro.
+
+```ls``` Fa vedere tutti i file e le cartelle in un percorso.
+
+```ls -la``` Fornisce una vista completa e dettagliata del contenuto della directory, inclusi i file nascosti.
+
+```clear``` Si usa per pulire la shell.
+
+```touch``` Si usa per creare file.
+
+```nano``` Si usa per aprire e scrivere nei file.
+
+```mkdir``` Crea una directory.
+
+```rm``` Si usa per rimuovere il file.
+
+```rm dir``` Cancella le cartelle vuote.
+
+```rm -r``` Cancella le cartelle e quello che c'è al loro interno.
+
+```history``` Mostra tutti i comandi che hai usato.
+
+```tree``` Si usa per mostrare l'albero.
+
+```man``` Ti indica come funzionano gli altri comandi.
+
+```cp``` Si usa per copiare il file.
+
+```cat``` Si usa per vedere il contenuto del file.
+
+compara due file riga per riga
+
+stampa qualcosa a video
+
+per dare i permessi
+
+aprire file sh
+
+per cercare file e directory in un percorso specificato
+
+per richiamare un comando
+
+per spostare file e directory
+
+dice chi ha loggato nel sistema
+
+legge una stringa
+
+ci permette di cercare un valore specifico all'interno dei file
+
+word counter, conta le parole, ti ritorna di quante parole è fatto un documento
+
+sospende un programma per una certa quantità di secondi
+
+è utilizzato per terminare processi in esecuzione.
+
+
 

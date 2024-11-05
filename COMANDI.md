@@ -111,6 +111,8 @@ Scansione veloce delle porte.
 
 ```history``` Mostra tutti i comandi che hai usato.
 
+```history !NUM``` Richiama un comando.
+
 ```tree``` Si usa per mostrare l'albero.
 
 ```man``` Ti indica come funzionano gli altri comandi.
@@ -119,15 +121,15 @@ Scansione veloce delle porte.
 
 ```cat``` Si usa per vedere il contenuto del file.
 
-compara due file riga per riga
+```diff``` Compara due file riga per riga.
 
-stampa qualcosa a video
+```echo``` Stampa qualcosa a video.
 
-per dare i permessi
+```chmod``` Si usa per dare o togliere i permessi.
 
-aprire file sh
+```./``` Si usa per aprire/eseguire un file sh.
 
-per cercare file e directory in un percorso specificato
+```find``` Si usa per cercare file e directory in un percorso specificato.
 
 per richiamare un comando
 

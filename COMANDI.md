@@ -131,21 +131,19 @@ Scansione veloce delle porte.
 
 ```find``` Si usa per cercare file e directory in un percorso specificato.
 
-per richiamare un comando
+```mv``` Si usa per spostare file e directory.
 
-per spostare file e directory
+```whoami``` Ci dice chi ha loggato nel sistema.
 
-dice chi ha loggato nel sistema
+```read``` Legge una stringa.
 
-legge una stringa
+```grep``` Ci permette di cercare un valore specifico all'interno dei file.
 
-ci permette di cercare un valore specifico all'interno dei file
+```wc``` Word counter, conta le parole, ti ritorna di quante parole è fatto un documento.
 
-word counter, conta le parole, ti ritorna di quante parole è fatto un documento
+```sleep``` Sospende un programma per una certa quantità di secondi.
 
-sospende un programma per una certa quantità di secondi
-
-è utilizzato per terminare processi in esecuzione.
+```kill``` Lo si utilizza per terminare processi in esecuzione.
 
 
 

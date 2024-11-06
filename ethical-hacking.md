@@ -178,6 +178,31 @@ Svantaggi delle scansioni SYN:
 - Necessitano di permessi sudo su Linux, in quanto richiedono la creazione di pacchetti grezzi, privilegio riservato all'utente root.
 - Possono destabilizzare servizi poco stabili, cosa rischiosa in ambienti di produzione.
 
+#### SCANSIONE UDP
+
+Le connessioni **UDP** non avviano una connessione con il three way handshake. UDP invia pacchetti alla porta target senza conferma, rendendolo ideale per applicazioni che privilegiano la velocità (come la condivisione video), ma difficile da analizzare. In Nmap, una scansione UDP si avvia con l’opzione `-sU`.
+
+Se Nmap invia un pacchetto a una porta UDP aperta, di norma non riceve risposta. Questo stato viene registrato come "open|filtered", indicando che la porta potrebbe essere aperta o filtrata da un firewall. Se Nmap riceve una risposta UDP (evento raro), la porta è segnata come aperta. In caso contrario, Nmap ritenta, e se non riceve ancora nulla, passa alla porta successiva.
+
+Se la porta UDP è chiusa, la risposta sarà un pacchetto ICMP che segnala la porta come irraggiungibile, permettendo a Nmap di identificarla come chiusa.
+
+Poiché è complesso verificare se una porta UDP è effettivamente aperta, le scansioni UDP sono molto più lente rispetto a quelle TCP (fino a 20 minuti per le prime 1000 porte). È consigliabile limitare la scansione con `--top-ports <numero>` per i 20 port UDP più comuni, accelerando il processo.
+
+#### NULL, FIN XMAS
+
+Le scansioni TCP **NULL**, **FIN** e **Xmas** sono meno comuni e vengono utilizzate per ottenere un livello di discrezione maggiore rispetto alle scansioni SYN. Di seguito un breve riepilogo di ciascuna:
+
+- **NULL Scan** (`-sN`): invia una richiesta TCP senza alcun flag. Se la porta è chiusa, il sistema risponde con un pacchetto RST (reset).
+  
+- **FIN Scan** (`-sF`): invia un pacchetto TCP con il flag FIN, usato di solito per chiudere una connessione. Anche qui, se la porta è chiusa, si riceve un pacchetto RST.
+  
+- **Xmas Scan** (`-sX`): invia un pacchetto con i flag PSH, URG e FIN impostati, dando un'apparenza simile a un "albero di Natale" quando visualizzato su Wireshark. Il server risponde con RST se la porta è chiusa.
+
+In tutte queste scansioni, se una porta è aperta non viene ricevuta risposta. Tuttavia, questo comportamento si verifica anche se la porta è protetta da un firewall, perciò le porte risultano semplicemente "open|filtered" (aperte o filtrate).
+
+È importante notare che, sebbene lo standard RFC 793 preveda che i dispositivi rispondano con un pacchetto RST a porte chiuse e non rispondano a porte aperte, non tutti i sistemi seguono questa regola. Ad esempio, Windows e molti dispositivi Cisco rispondono con RST a ogni pacchetto TCP non valido, facendo risultare tutte le porte chiuse.
+
+L’obiettivo principale di queste scansioni è evitare i firewall, poiché molti firewall bloccano i pacchetti SYN (che avviano le connessioni), mentre permettono i pacchetti senza SYN. Tuttavia, i sistemi IDS moderni sono in grado di rilevare queste tecniche, quindi non sempre garantiscono il 100% di successo.
 
 ### TELNET
 

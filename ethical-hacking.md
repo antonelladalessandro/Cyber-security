@@ -129,6 +129,56 @@ Il banner grabbing è una tecnica utilizzata per ottenere informazioni su un ser
 
 USIAMO: NMAP (-sV), TELNET E NETCAT.
 
+### NMAP
+
+Senza conoscere quali porte sono aperte su un server, è impossibile attaccarlo con successo. La scansione delle porte è quindi un passaggio cruciale per ogni attacco, solitamente realizzato con uno strumento chiamato nmap. Nmap esegue diverse scansioni delle porte, determinandone lo stato: aperte, chiuse o filtrate (spesso da un firewall). Una volta identificate le porte aperte, possiamo scoprire i servizi associati, sia manualmente che con nmap stesso.
+
+
+Quando si esegue una scansione delle porte con **Nmap**, esistono tre tipi di scansioni di base:
+
+1. **Scansioni TCP Connect** (`-sT`)
+2. **Scansioni SYN "Half-open"** (`-sS`)
+3. **Scansioni UDP** (`-sU`)
+
+Ci sono anche tipi di scansione meno comuni:
+
+- **Scansioni TCP Null** (`-sN`)
+- **Scansioni TCP FIN** (`-sF`)
+- **Scansioni TCP Xmas** (`-sX`)
+
+#### SCANSIONI TCP
+
+Per comprendere le **scansioni TCP Connect** (`-sT`) di Nmap, è importante conoscere la procedura del **three-way handshake** del protocollo TCP. Questo processo avviene in tre fasi: 
+1. Il terminale di connessione invia una richiesta TCP al server target con il flag SYN attivato.
+2. Il server risponde con un pacchetto TCP contenente i flag SYN e ACK.
+3. La nostra macchina completa la stretta di mano inviando un pacchetto TCP con il flag ACK.
+
+Nelle scansioni TCP Connect, Nmap usa questo processo per ogni porta target. Se la porta è chiusa, il server risponde con un pacchetto di reset (RST), indicando a Nmap che la porta è chiusa. Se la porta è aperta, il server risponde con un pacchetto SYN/ACK, e Nmap segna la porta come aperta, completando la stretta di mano.
+
+Esiste una terza possibilità: se una porta è aperta ma protetta da un firewall, quest’ultimo può semplicemente bloccare il pacchetto in entrata, e Nmap non riceve alcuna risposta. In questo caso, la porta viene considerata “filtrata”.
+
+Alcuni firewall possono essere configurati per rispondere con un pacchetto RST per confondere le scansioni, rendendo difficile ottenere una lettura accurata delle porte.
+
+#### SCANSIONI SYN
+
+Ecco un riassunto tradotto:
+
+---
+
+Come le scansioni TCP, le **scansioni SYN** (`-sS`) sono usate per analizzare le porte TCP di un target, ma funzionano in modo leggermente diverso. Chiamate anche "Half-open" o "Stealth" scans, queste scansioni interrompono il three way handshake inviando un pacchetto di reset (RST) dopo aver ricevuto il SYN/ACK dal server. 
+
+Vantaggi delle scansioni SYN:
+
+- Possono bypassare i vecchi sistemi di rilevamento intrusioni (IDS), poiché questi cercano una stretta di mano completa.
+- Non vengono spesso registrate dalle applicazioni poiché non si stabilisce una connessione completa, migliorando la "discrezione".
+- Essendo più rapide delle scansioni TCP complete, non completando la stretta di mano per ogni porta.
+
+Svantaggi delle scansioni SYN:
+
+- Necessitano di permessi sudo su Linux, in quanto richiedono la creazione di pacchetti grezzi, privilegio riservato all'utente root.
+- Possono destabilizzare servizi poco stabili, cosa rischiosa in ambienti di produzione.
+
+
 ### TELNET
 
 Il protocollo TELNET, sviluppato nel 1969, permette di comunicare con un sistema remoto tramite interfaccia a riga di comando (CLI) e utilizza la porta predefinita 23. Dal punto di vista della sicurezza, TELNET non cripta i dati, quindi invia in chiaro credenziali come username e password, rendendole vulnerabili. SSH (Secure SHell) è un’alternativa più sicura.

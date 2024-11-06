@@ -25,3 +25,27 @@ Il **protocollo IP (Internet Protocol)** è l'insieme di regole che definisce co
 - **IPv4**: Usa indirizzi a 32 bit, suddivisi in quattro blocchi numerici tra 0 e 255.
 - **IPv6**: Una versione avanzata con indirizzi a 128 bit, utilizzata per soddisfare la crescente domanda di nuovi indirizzi IP.
 
+
+# NAT (Network Address Translation) 
+Il NAT è una tecnica utilizzata per trasformare gli indirizzi IP privati di una rete locale in indirizzi IP pubblici, permettendo ai dispositivi all'interno di una LAN di comunicare con l'esterno (Internet) e viceversa. Il NAT funziona come una sorta di tabella che tiene traccia delle richieste e degli indirizzi IP dei dispositivi interni, traducendoli in un unico indirizzo pubblico visibile su Internet. Questo consente di risparmiare indirizzi IP pubblici e fornisce un livello base di sicurezza, in quanto nasconde gli indirizzi privati dietro l’IP pubblico.
+
+# Firewall
+Un firewall è un sistema di sicurezza che può essere implementato sia a livello software che hardware. La sua funzione è filtrare il traffico in entrata e in uscita, decidendo cosa bloccare e cosa consentire in base a regole predefinite. I firewall proteggono la rete da accessi non autorizzati e attacchi informatici, regolando quali connessioni sono consentite o bloccate.
+
+# Porte
+Le porte sono "sottoindirizzi" associati agli indirizzi IP e rappresentano canali specifici per la trasmissione e ricezione di dati. Ogni porta è identificata da un numero univoco (da 0 a 65535) e associata a un protocollo o servizio. Per comunicare con un servizio specifico su un dispositivo, è necessario conoscere sia l'indirizzo IP sia il numero di porta. Alcuni numeri di porta sono riservati a servizi ben noti, rendendo le comunicazioni standardizzate.
+
+### Porte più comuni:
+- **80**: HTTP (traffico web non sicuro)
+- **443**: HTTPS (traffico web sicuro, certificato di sicurezza)
+- **22**: SSH (accesso sicuro alla shell)
+- **21**: FTP (trasferimento di file)
+- **25**: SMTP (posta elettronica in uscita)
+- **587**: SMTP (altra porta per posta elettronica in uscita, sicura)
+- **110**: POP3 (posta elettronica in entrata)
+- **53**: DNS (risoluzione dei nomi di dominio)
+- **3389**: RDP (Remote Desktop Protocol, accesso remoto al desktop di un altro computer)
+
+**Well Known Ports**: da 1 a 1024, riservate per protocolli e servizi comuni (ad esempio, HTTP, FTP, DNS).
+
+Ogni servizio utilizza porte specifiche per stabilire e mantenere connessioni. Ad esempio, per un server web sono necessarie le porte **80** (HTTP) e **443** (HTTPS) per garantire l’accesso alle pagine web, mentre altre porte (come **22** per SSH) permettono l’accesso sicuro remoto alla macchina.

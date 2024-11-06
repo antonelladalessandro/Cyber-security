@@ -161,10 +161,6 @@ Alcuni firewall possono essere configurati per rispondere con un pacchetto RST p
 
 #### SCANSIONI SYN
 
-Ecco un riassunto tradotto:
-
----
-
 Come le scansioni TCP, le **scansioni SYN** (`-sS`) sono usate per analizzare le porte TCP di un target, ma funzionano in modo leggermente diverso. Chiamate anche "Half-open" o "Stealth" scans, queste scansioni interrompono il three way handshake inviando un pacchetto di reset (RST) dopo aver ricevuto il SYN/ACK dal server. 
 
 Vantaggi delle scansioni SYN:

@@ -321,4 +321,12 @@ Un URL (Uniform Resource Locator) è l’indirizzo web che consente di accedere 
 
 7. **Fragmento**: Inizia con il simbolo “#” e punta a una sezione specifica della pagina, come un titolo o una tabella. Anche i frammenti devono essere gestiti in modo sicuro per prevenire attacchi.
 
+### Codici di Stato e Categorie
 
+I codici di stato si dividono in cinque categorie principali:
+
+- **Risposte Informative** (100-199): indicano che il server ha ricevuto parte della richiesta e sta aspettando il resto.
+- **Risposte di Successo** (200-299): indicano che la richiesta è stata processata con successo e i dati richiesti sono stati inviati.
+- **Messaggi di Redirezione** (300-399): indicano che la risorsa è stata spostata e includono spesso un nuovo URL.
+- **Errori del Client** (400-499): segnalano un problema con la richiesta, come un URL sbagliato o mancanza di autenticazione.
+- **Errori del Server** (500-599): indicano che il server ha riscontrato un problema durante l'elaborazione della richiesta.

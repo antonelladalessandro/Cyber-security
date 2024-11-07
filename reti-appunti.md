@@ -228,6 +228,30 @@ Se riscontri problemi nella navigazione (ad esempio, siti non caricati correttam
 
 ---
 
+Ecco una versione rivisitata dei tuoi appunti sulle VPN (Virtual Private Network):
+
+---
+
+### **Virtual Private Network (VPN)**
+
+Una **VPN (Virtual Private Network)** è un sistema che permette di navigare su internet in modo sicuro e anonimo. Usare una VPN è come attraversare un tunnel privato: il tuo traffico viene criptato e instradato attraverso un server remoto, proteggendo la tua identità e rendendo più difficile tracciare la tua posizione o attività online.
+
+**Come Funziona una VPN:**
+1. **Connessione Sicura**: Una VPN cripta i dati che viaggiano tra il tuo dispositivo e il server VPN, rendendo questi dati illeggibili a chiunque tenti di intercettarli (come hacker o provider internet). Questo è particolarmente utile quando ti colleghi a reti Wi-Fi pubbliche, spesso più vulnerabili ad attacchi.
+   
+2. **Nascondi il tuo IP**: Una VPN nasconde il tuo indirizzo IP, sostituendolo con quello del server VPN. In questo modo, il sito o il servizio che stai visitando vedrà l'IP del server VPN (che puoi scegliere in un altro Paese), non il tuo vero indirizzo IP, nascondendo quindi la tua reale posizione geografica.
+
+3. **Accesso a Contenuti Bloccati**: Con una VPN puoi accedere a siti o servizi bloccati nella tua area geografica. Collegandoti a un server situato in un Paese dove tali contenuti sono accessibili, la VPN ti permette di aggirare restrizioni geografiche.
+
+**Perché Usare una VPN:**
+- **Privacy**: Nasconde il tuo indirizzo IP e cifra i dati, proteggendo la tua identità online e impedendo a siti e servizi di tracciare le tue attività e posizione.
+- **Sicurezza**: Protegge il traffico internet da intercettazioni, fondamentale per connessioni su reti pubbliche, come Wi-Fi di hotel, aeroporti e caffetterie.
+- **Accesso a Contenuti Globali**: Una VPN consente di collegarsi a server in vari Paesi, permettendo di accedere a contenuti disponibili solo in alcune regioni (come piattaforme di streaming).
+
+In Sintesi: Una VPN è uno strumento che migliora sicurezza e privacy online, creando un “tunnel” virtuale per navigare in modo sicuro e mascherando la tua posizione. È una soluzione accessibile e facile da usare per aggirare restrizioni geografiche e garantire una navigazione più privata.
+
+
+
 # SMB
 
 **SMB** (Server Message Block Protocol) è un protocollo di comunicazione client-server utilizzato per condividere l'accesso a file, stampanti, porte seriali e altre risorse su una rete. I server mettono a disposizione file system e altre risorse (come stampanti e API) per i client sulla rete, i quali possono accedere a queste risorse condivise, oltre che ai propri dischi locali.
@@ -237,8 +261,6 @@ Una volta stabilita la connessione, i client inviano comandi (chiamati SMB) al s
 Tutti i sistemi operativi Microsoft Windows, a partire da Windows 95, includono il supporto per il protocollo SMB sia lato client che server. Inoltre, Samba, un server open-source che supporta il protocollo SMB, è stato rilasciato per i sistemi Unix.
 
 **PORTE**: 139 e 445 (si chiamano netBIOS: 139 138 137, se trovo queste porte ho un computer di tipo windows)
-
-
 
 
 ### Enumerazione

@@ -35,7 +35,7 @@ Un firewall è un sistema di sicurezza che può essere implementato sia a livell
 # Porte
 Le porte sono "sottoindirizzi" associati agli indirizzi IP e rappresentano canali specifici per la trasmissione e ricezione di dati. Ogni porta è identificata da un numero univoco (da 0 a 65535) e associata a un protocollo o servizio. Per comunicare con un servizio specifico su un dispositivo, è necessario conoscere sia l'indirizzo IP sia il numero di porta. Alcuni numeri di porta sono riservati a servizi ben noti, rendendo le comunicazioni standardizzate.
 
-### Porte più comuni:
+### Porte più comuni
 - **80**: HTTP (traffico web non sicuro)
 - **443**: HTTPS (traffico web sicuro, certificato di sicurezza)
 - **22**: SSH (accesso sicuro alla shell)

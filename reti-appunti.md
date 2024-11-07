@@ -90,17 +90,17 @@ Ecco una versione migliorata e integrata dei tuoi appunti:
 
 ---
 
-### TCP (Transmission Control Protocol) e UDP (User Datagram Protocol)
+# TCP e UDP 
 
 TCP e UDP sono due protocolli fondamentali utilizzati per la trasmissione dei dati in rete, ciascuno con caratteristiche e utilizzi differenti:
 
-#### **TCP (Transmission Control Protocol):**
+### **TCP (Transmission Control Protocol):**
 - **Connessione affidabile:** TCP è un protocollo orientato alla connessione. Prima di inviare i dati, stabilisce una connessione tra i dispositivi attraverso il processo chiamato *three-way handshake*.
 - **Affidabilità:** Garantisce che i dati arrivino a destinazione nell'ordine giusto. Se un pacchetto viene perso o danneggiato, TCP lo rileva e lo ritrasmette.
 - **Controllo di flusso:** Gestisce la velocità di trasmissione per evitare sovraccarichi della rete o del dispositivo ricevente.
 - **Uso comune:** È utilizzato per applicazioni che richiedono affidabilità, come la navigazione web (HTTP/HTTPS), l'invio di email (SMTP), e il trasferimento di file (FTP).
 
-#### **UDP (User Datagram Protocol):**
+### **UDP (User Datagram Protocol):**
 - **Connessione non affidabile:** UDP è un protocollo senza connessione. Non stabilisce una connessione prima di inviare i dati e non garantisce che questi arrivino a destinazione.
 - **Velocità:** Essendo un protocollo più semplice rispetto a TCP, UDP è più veloce, ma non offre meccanismi di controllo degli errori. Se i dati vengono persi o arrivano fuori ordine, non vengono corretti.
 - **Uso comune:** Viene utilizzato in applicazioni che privilegiano la velocità e tollerano la perdita di alcuni dati, come lo streaming video, le chiamate VoIP, e i giochi online.

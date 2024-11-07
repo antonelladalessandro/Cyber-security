@@ -86,8 +86,6 @@ Pur essendo unico per ciascun dispositivo, l'indirizzo MAC può essere "spoofato
   - **Accessi non autorizzati:** Alcuni sistemi di sicurezza, come firewall e access point, utilizzano indirizzi MAC per consentire o negare l'accesso alla rete. Se un dispositivo riesce a falsificare l’indirizzo MAC di un altro dispositivo autorizzato, potrebbe ottenere accesso a risorse altrimenti bloccate.
   - **Limitazioni del MAC Spoofing:** Questa tecnica funziona solo all'interno della LAN (rete locale), poiché gli indirizzi MAC non sono visibili al di fuori di essa.
 
-Ecco una versione migliorata e integrata dei tuoi appunti:
-
 ---
 
 # TCP e UDP 

@@ -152,6 +152,82 @@ In un pacchetto TCP, i flag sono utilizzati per controllare e gestire la comunic
 
 ---
 
+### **DNS (Domain Name System)**
+
+Il **DNS (Domain Name System)** è un sistema che traduce i nomi di dominio in indirizzi IP, permettendo ai computer di comunicare tra loro. Ad esempio, quando digiti un URL come **www.google.it**, il DNS converte quel nome in un indirizzo IP (ad esempio, 172.217.9.142) che viene utilizzato per localizzare il sito web.
+
+#### **Funzionamento del DNS:**
+Quando digiti un nome di dominio, il tuo dispositivo invia una richiesta per scoprire l'indirizzo IP del sito:
+1. Se il DNS non è stato configurato manualmente, la richiesta viene inviata al server DNS del provider (Internet Service Provider - ISP).
+2. Il server DNS del provider può interrogare altri server DNS, in particolare quelli autoritativi, che contengono la risposta finale.
+
+Puoi **modificare il DNS provider** (ad esempio, utilizzando OpenDNS o Google DNS) per ricevere risposte direttamente dai server autonomi.
+
+#### **Porta DNS:** 
+Il DNS opera sulla **porta 53**.
+
+#### **Comandi Utili per il DNS:**
+- **dig:** Permette di ottenere informazioni dettagliate, come gli indirizzi IP associati a un nome di dominio.
+- **host:** Fornisce informazioni di base, come gli indirizzi IPv4/IPv6, e i server di posta elettronica (MX).
+
+![immagine](https://github.com/user-attachments/assets/fabc6af5-fb55-43f1-9318-7196ab443dac)
+
+
+**TLD (Top-Level Domain)**
+Il **TLD** è la parte finale di un nome di dominio (es. **.com**, **.org**, **.it**). Esistono due tipi principali di TLD:
+- **gTLD (Generic TLD):** Rappresentano un'area di interesse generico (es. **.com**, **.org**, **.edu**).
+- **ccTLD (Country Code TLD):** Rappresentano aree geografiche (es. **.uk** per il Regno Unito, **.ca** per il Canada).
+
+Con la crescente domanda, sono stati introdotti nuovi gTLD come **.club**, **.online**, **.website**, ecc.
+
+**Dominio di Secondo Livello**
+Il **Dominio di Secondo Livello** è la parte di un dominio che precede il TLD. Ad esempio, in **tryhackme.com**, **tryhackme** è il dominio di secondo livello. Quando registri un dominio, questo è limitato a **63 caratteri** e può contenere solo lettere (a-z), numeri (0-9), e trattini (non possono iniziare o terminare con trattini o averne consecutivi).
+
+**Sottodominio**
+Un **sottodominio** si trova a sinistra del dominio di secondo livello, separato da un punto. Ad esempio, in **admin.tryhackme.com**, **admin** è il sottodominio. Puoi creare più sottodomini (es. **jupiter.servers.tryhackme.com**) fino a un limite di **253 caratteri** per il nome completo.
+
+### **Tipi di Record DNS**
+Il DNS non si limita solo alla risoluzione degli indirizzi web. Esistono diversi tipi di record DNS:
+
+- **Record A:** Risolvono gli indirizzi IPv4 (es. **104.26.10.229**).
+- **Record AAAA:** Risolvono gli indirizzi IPv6 (es. **2606:4700:20::681a**).
+- **Record CNAME:** Risolvono un nome di dominio a un altro (es. **store.tryhackme.com** potrebbe puntare a **shops.shopify.com**).
+  - Funzione: crea alias per altri domini. Facilita la gestione e l'utilizzo di servizi esterni.
+- **Record MX:** Risolvono i server di posta elettronica associati al dominio (es. **alt1.aspmx.l.google.com**).
+  - Utilizzato per determinare dove inviare la posta elettronica.
+- **Record TXT:** Permettono di memorizzare dati testuali. Utilizzati per la verifica del dominio e la protezione contro lo spam.
+
+**Comandi DNS:**
+- **nslookup:** Permette di ottenere l'indirizzo IP di un sito web.
+  - Per ottenere i record MX: **nslookup -type=mx dominio.com**.
+
+#### **DNS Inverso**
+Il **DNS inverso** è il processo opposto rispetto al DNS normale: dato un indirizzo IP, risolve il nome di dominio associato. È utile per identificare l'origine di una connessione o per verificare se un IP corrisponde a un dominio specifico.
+
+#### **Cache DNS**
+La **cache DNS** è una memoria temporanea che conserva le risposte alle richieste DNS recenti. Quando visiti un sito, il tuo dispositivo memorizza l'indirizzo IP per velocizzare le successive richieste:
+1. **Prima richiesta:** Il dispositivo chiede al server DNS l'indirizzo IP.
+2. **Consultazione della cache:** Se il sito è già stato visitato, il dispositivo utilizza l'indirizzo salvato.
+3. **Scadenza:** I record DNS hanno un tempo di vita (TTL). Quando scade, la cache si aggiorna.
+
+**Tipi di Cache DNS:**
+- **Cache locale:** Memorizzata sul dispositivo dell'utente.
+- **Cache del router:** Memorizzata nel router per velocizzare l'accesso per tutta la rete domestica.
+- **Cache dei server DNS:** Memorizzata sui server dei provider di rete, riducendo la necessità di interrogare server DNS autoritativi.
+
+**Vantaggi della Cache DNS:**
+- **Velocità:** Riduce il tempo di caricamento dei siti web già visitati.
+- **Riduzione del traffico:** Minima la necessità di inviare richieste DNS.
+- **Affidabilità:** Se un server DNS non è disponibile, la cache permette di accedere ai siti precedentemente visitati.
+
+**Pulizia della Cache DNS:**
+Se riscontri problemi nella navigazione (ad esempio, siti non caricati correttamente), è possibile cancellare la cache DNS con i seguenti comandi:
+- **Su Windows:** `ipconfig /flushdns`
+- **Su macOS:** `sudo killall -HUP mDNSResponder`
+- **Su Linux:** `sudo systemd-resolve --flush-caches` o riavviare il servizio DNS.
+
+---
+
 # SMB
 
 **SMB** (Server Message Block Protocol) è un protocollo di comunicazione client-server utilizzato per condividere l'accesso a file, stampanti, porte seriali e altre risorse su una rete. I server mettono a disposizione file system e altre risorse (come stampanti e API) per i client sulla rete, i quali possono accedere a queste risorse condivise, oltre che ai propri dischi locali.

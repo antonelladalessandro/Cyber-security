@@ -220,7 +220,7 @@ Questi due script fanno parte dell’Nmap Scripting Engine (NSE) e servono per r
 
 ```
 smb-enum-users
-
+```
 - **Scopo**: Questo script è utilizzato per elencare gli utenti presenti su un server SMB.
 - **Funzionamento**: Esegue una query al server SMB per richiedere informazioni sugli account utente configurati. Ritorna una lista di utenti, con alcuni dettagli se sono disponibili (come i nomi degli utenti).
 - **Utilità**: Serve a raccogliere informazioni di base sugli utenti di un dominio o di un server Windows, utile per comprendere chi potrebbe avere accesso a determinate risorse e per valutare possibili target in una rete.

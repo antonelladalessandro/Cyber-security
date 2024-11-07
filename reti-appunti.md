@@ -56,3 +56,18 @@ Il Port Forwarding una tecnica di rete che permette il trasferimento di dati tra
 In altre parole, **il port forwarding consente di indirizzare traffico esterno verso un dispositivo o servizio specifico all'interno della rete**. Immagina di avere un dispositivo connesso al router di casa che esegue un servizio (come un server di gioco o una videocamera di sorveglianza) e a cui vuoi accedere dall'esterno, tramite internet. Normalmente, il router blocca le connessioni esterne per proteggere la rete, ma con il port forwarding puoi "aprire una porta" specifica, istruisce il router a reindirizzare tutto il traffico che arriva su quella porta verso un dispositivo specifico nella rete interna.
 
 In pratica, il router agisce come un ponte, ricevendo le informazioni dall'esterno e reindirizzandole verso il dispositivo interno. Questo permette di accedere in modo sicuro e diretto a servizi interni alla rete, bypassando le limitazioni del firewall del router per la porta specifica.
+
+# DHCP
+
+Esistono delle macchine collegate nella rete locale alle quale viene assegnato un indirizzo ip . Chi assegna questi indirizzo è il meccanismo DHCP (Dynamic host configuration protocol - protocollo che assegna indirizzi alle macchine nella rete locale) e lo fa attraverso il router.
+
+**DORA** (discover, offer, request, acknowledge): Quando un dispositivo (client) si connette a una rete, segue un processo DHCP a quattro fasi, noto anche come **DORA** : <br>
+	1. Discover: Il client invia un messaggio broadcast (a tutti i dispositivi nella rete) per cercare server DHCP disponibili <br>
+	2. Offer: I server DHCP che ricevono il messaggio Discover rispondono con un messaggio DHCP Offer, che include un indirizzo IP che il server è disposto ad assegnare al client, oltre ad altre informazioni di configurazione come il lease time (il tempo per cui l’indirizzo può essere utilizzato), il gateway predefinito, e i server DNS. <br>
+	1. Request: Il client riceve una o più offerte e sceglie una. Poi invia un messaggio broadcast DHCP Request per informare tutti i server DHCP sulla scelta dell’offerta accettata e per richiedere l’indirizzo IP proposto. <br>
+	2. Acknowledge: Il server DHCP selezionato risponde con un messaggio DHCP Acknowledge, confermando l’assegnazione dell’indirizzo IP e di altri parametri di configurazione al client. Se invece avviene un problema, il server invierà un messaggio DHCP Nak (negative acknowledgment), e il client dovrà iniziare nuovamente il processo. <br>
+
+
+**Broadcast**: comando inviato a tutti quelli presenti nella rete
+
+

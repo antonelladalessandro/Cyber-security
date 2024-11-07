@@ -86,7 +86,71 @@ Pur essendo unico per ciascun dispositivo, l'indirizzo MAC può essere "spoofato
   - **Accessi non autorizzati:** Alcuni sistemi di sicurezza, come firewall e access point, utilizzano indirizzi MAC per consentire o negare l'accesso alla rete. Se un dispositivo riesce a falsificare l’indirizzo MAC di un altro dispositivo autorizzato, potrebbe ottenere accesso a risorse altrimenti bloccate.
   - **Limitazioni del MAC Spoofing:** Questa tecnica funziona solo all'interno della LAN (rete locale), poiché gli indirizzi MAC non sono visibili al di fuori di essa.
 
+Ecco una versione migliorata e integrata dei tuoi appunti:
 
+---
+
+### TCP (Transmission Control Protocol) e UDP (User Datagram Protocol)
+
+TCP e UDP sono due protocolli fondamentali utilizzati per la trasmissione dei dati in rete, ciascuno con caratteristiche e utilizzi differenti:
+
+#### **TCP (Transmission Control Protocol):**
+- **Connessione affidabile:** TCP è un protocollo orientato alla connessione. Prima di inviare i dati, stabilisce una connessione tra i dispositivi attraverso il processo chiamato *three-way handshake*.
+- **Affidabilità:** Garantisce che i dati arrivino a destinazione nell'ordine giusto. Se un pacchetto viene perso o danneggiato, TCP lo rileva e lo ritrasmette.
+- **Controllo di flusso:** Gestisce la velocità di trasmissione per evitare sovraccarichi della rete o del dispositivo ricevente.
+- **Uso comune:** È utilizzato per applicazioni che richiedono affidabilità, come la navigazione web (HTTP/HTTPS), l'invio di email (SMTP), e il trasferimento di file (FTP).
+
+#### **UDP (User Datagram Protocol):**
+- **Connessione non affidabile:** UDP è un protocollo senza connessione. Non stabilisce una connessione prima di inviare i dati e non garantisce che questi arrivino a destinazione.
+- **Velocità:** Essendo un protocollo più semplice rispetto a TCP, UDP è più veloce, ma non offre meccanismi di controllo degli errori. Se i dati vengono persi o arrivano fuori ordine, non vengono corretti.
+- **Uso comune:** Viene utilizzato in applicazioni che privilegiano la velocità e tollerano la perdita di alcuni dati, come lo streaming video, le chiamate VoIP, e i giochi online.
+
+ **In breve:**
+- **TCP:** Usato quando l'affidabilità è necessaria.
+- **UDP:** Usato quando la velocità è prioritaria e si può tollerare la perdita di dati.
+
+**Esempio TCP:** Quando navighi su un sito web, TCP è essenziale perché è importante che tutte le parti della pagina arrivino correttamente.  
+**Esempio UDP:** Quando guardi un video in streaming o giochi online, UDP è usato perché è più importante che l'azione sia veloce, anche se qualche frammento di video o gioco potrebbe andare perso.
+
+**In pratica:**  
+- **TCP =** come una conversazione ordinata e attenta.  
+- **UDP =** come inviare rapidamente dei messaggi senza preoccuparsi troppo di eventuali mancanze.
+
+### **TCP Three-Way Handshake**
+
+Il **Three-Way Handshake** è il processo con cui due dispositivi (un client e un server) stabiliscono una connessione TCP. Ecco come funziona:
+
+1. **SYN (Synchronize):** Il client invia un messaggio SYN al server per iniziare una connessione. È come dire: "Ciao, voglio parlare con te, sei disponibile?"
+2. **SYN-ACK (Acknowledge):** Il server risponde con un messaggio SYN-ACK per indicare che è pronto a comunicare. "Ciao, ho ricevuto il tuo messaggio e sono pronto, sei pronto anche tu?"
+3. **ACK (Acknowledge):** Il client risponde con un messaggio ACK, confermando che la connessione è stabilita. "Perfetto, ho ricevuto la tua risposta, possiamo iniziare."
+
+**In sintesi:**
+- **SYN:** "Posso parlare?"
+- **SYN-ACK:** "Sì, possiamo parlare, sei pronto?"
+- **ACK:** "Sì, sono pronto. Iniziamo!"
+
+Dopo questo scambio, la connessione è stabilita e possono iniziare a scambiarsi dati.
+
+---
+
+### **TCP Wrapper**
+
+**TCP Wrapper** è uno strumento di sicurezza usato nei sistemi Unix-like (Linux) per limitare l'accesso ai servizi di rete basati su TCP. Funziona come un livello di protezione tra i servizi di rete (es. SSH, FTP) e le connessioni esterne. Gli amministratori di sistema possono configurare regole per determinare quali host sono autorizzati ad accedere ai servizi di rete.
+
+---
+
+### **Flag dei pacchetti TCP**
+
+In un pacchetto TCP, i flag sono utilizzati per controllare e gestire la comunicazione. I principali flag sono:
+
+- **URG (Urgente):** Indica che i dati nel pacchetto devono essere trattati come urgenti e processati immediatamente.
+- **ACK (Acknowledge):** Conferma la ricezione di segmenti.
+- **PSH (Push):** Indica che i dati devono essere immediatamente inoltrati all'applicazione.
+- **RST (Reset):** Resetta una connessione, interrompendo la comunicazione.
+- **SYN (Synchronize):** Utilizzato per iniziare il processo di handshake TCP.
+- **FIN (Finish):** Indica la fine di una connessione TCP, segnando che la comunicazione è terminata.
+
+---
 
 # SMB
 

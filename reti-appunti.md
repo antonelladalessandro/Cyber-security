@@ -305,3 +305,23 @@ Il back end comprende elementi nascosti ma cruciali:
 - **Infrastruttura**: Include server e reti che supportano il funzionamento del sito, come strade e risorse del pianeta.
 - **WAF (Web Application Firewall)**: Protegge il sito da minacce esterne, simile all'atmosfera del pianeta che scherma dai raggi dannosi.
 
+## URL 
+
+Un URL (Uniform Resource Locator) è l’indirizzo web che consente di accedere a contenuti online, come pagine web, video o immagini, guidando il browser alla risorsa corretta. È composto da varie parti:
+
+
+1. **Schema (Protocollo)**: Specifica il protocollo usato per accedere alla risorsa, come HTTP o HTTPS, quest'ultimo crittografato per una maggiore sicurezza.
+
+2. **Utente**: In casi rari, l’URL può includere informazioni di accesso come il nome utente, ma è sconsigliato per motivi di sicurezza.
+
+3. **Host/Dominio**: È la parte principale dell’URL che identifica il sito. I domini sono unici e registrati attraverso enti specifici. Occorre fare attenzione a nomi di dominio falsi o simili (typosquatting), usati per truffe o phishing.
+
+4. **Porta**: Indica il numero di porta per accedere ai servizi del server. Le porte più comuni sono la 80 per HTTP e la 443 per HTTPS.
+
+5. **Percorso (Path)**: Specifica il file o la pagina da raggiungere sul server. Questo percorso deve essere sicuro per limitare l’accesso a risorse sensibili.
+
+6. **Query String**: È la parte che inizia con il punto interrogativo (?) e può includere termini di ricerca o input di moduli. Deve essere trattata in modo sicuro per evitare attacchi, come iniezioni di codice.
+
+7. **Fragmento**: Inizia con il simbolo “#” e punta a una sezione specifica della pagina, come un titolo o una tabella. Anche i frammenti devono essere gestiti in modo sicuro per prevenire attacchi.
+
+**In sintesi**, l’URL è un indirizzo complesso e dettagliato, fondamentale per la navigazione web e che richiede attenzione alla sicurezza per proteggere l’utente e le risorse web.

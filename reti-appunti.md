@@ -70,4 +70,37 @@ Esistono delle macchine collegate nella rete locale alle quale viene assegnato u
 
 **Broadcast**: comando inviato a tutti quelli presenti nella rete
 
+# SMB
 
+**SMB** (Server Message Block Protocol) è un protocollo di comunicazione client-server utilizzato per condividere l'accesso a file, stampanti, porte seriali e altre risorse su una rete. I server mettono a disposizione file system e altre risorse (come stampanti e API) per i client sulla rete, i quali possono accedere a queste risorse condivise, oltre che ai propri dischi locali.
+L’SMB è un protocollo di richiesta-risposta, in cui vengono trasmessi più messaggi tra client e server per stabilire una connessione.
+Una volta stabilita la connessione, i client inviano comandi (chiamati SMB) al server per accedere a file condivisi, aprire, leggere e scrivere file, e svolgere tutte le operazioni che si desidera fare con un file system, ma tramite la rete.
+
+Tutti i sistemi operativi Microsoft Windows, a partire da Windows 95, includono il supporto per il protocollo SMB sia lato client che server. Inoltre, Samba, un server open-source che supporta il protocollo SMB, è stato rilasciato per i sistemi Unix.
+
+**PORTE**: 139 e 445 (si chiamano netBIOS: 139 138 137, se trovo queste porte ho un computer di tipo windows)
+
+
+
+
+### Enumerazione
+L'enumerazione è il processo di raccolta di informazioni su un target per identificare potenziali attacchi e supportare l'exploitazione. Questo processo è fondamentale per il successo di un attacco, poiché permette di risparmiare tempo evitando exploit inefficaci o che possono bloccare il sistema. L'enumerazione può fornire informazioni utili all'attaccante come nomi utente, password, dati di rete, nomi di host, dati delle applicazioni e servizi.
+
+### SMB
+In un server ci sono spesso drive SMB condivisi che possono essere utilizzati per visualizzare o trasferire file. Gli SMB condivisi sono spesso il punto di partenza di un attacco, perché contengono informazioni sensibili accessibili tramite questi drive.
+
+### Port Scanning
+Il primo passo dell'enumerazione è condurre uno scan delle porte per scoprire servizi, applicazioni, struttura e sistema operativo della macchina target. Se non hai già familiarità con il port scanning, ti consiglio di dare un'occhiata alla sezione su Nmap.
+
+### Enum4Linux
+Enum4linux è uno strumento utilizzato per enumerare le condivisioni SMB su sistemi Windows e Linux. Funziona come una raccolta di strumenti Samba e consente di estrarre rapidamente informazioni SMB dal target.
+La sintassi di Enum4Linux è semplice: enum4linux [opzioni] ip
+
+**TAG E FUNZIONALITÀ**
+	• -U — ottiene la lista utenti
+	• -M — ottiene la lista delle macchine
+	• -N — ottiene il dump della lista nomi (differente da -U e -M)
+	• -S — ottiene la lista delle condivisioni
+	• -P — ottiene informazioni sulla policy password
+	• -G — ottiene la lista dei gruppi e dei membri
+ 	• -a — esegue tutte le opzioni sopra (enumerazione completa di base)

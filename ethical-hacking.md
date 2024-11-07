@@ -237,13 +237,13 @@ smb-enum-shares
 
 Esiste una configurazione firewall molto comune che è fondamentale sapere come bypassare il firewall.
 
-I **host Windows** con il firewall predefinito bloccano tutti i pacchetti **ICMP**. Questo può essere un problema, poiché Nmap, per impostazione predefinita, utilizza **ping** per verificare se un host è attivo. Se il firewall blocca i pacchetti ICMP, Nmap potrebbe considerare un host come "morto" e non eseguire scansioni su di esso.
+Gli **host Windows** con il firewall predefinito bloccano tutti i pacchetti **ICMP**. Questo può essere un problema, poiché Nmap, per impostazione predefinita, utilizza **ping** per verificare se un host è attivo. Se il firewall blocca i pacchetti ICMP, Nmap potrebbe considerare un host come "morto" e non eseguire scansioni su di esso.
 
 Per aggirare questa configurazione, possiamo utilizzare l'opzione **-Pn**, che indica a Nmap di non eseguire il ping iniziale prima di scansionare l'host. Questo fa sì che Nmap consideri sempre l'host come attivo, ma può allungare i tempi di scansione, poiché continuerà a verificare ogni porta, anche se l'host è effettivamente "morto".
 
 Se siamo direttamente sulla rete locale, Nmap può utilizzare **ARP requests** per determinare l'attività dell'host.
 
-### Altri switch utili per aggirare i firewall includono:
+**Altri switch utili per aggirare i firewall includono**:
 - **-f**: frammenta i pacchetti in pezzi più piccoli, riducendo la probabilità che vengano rilevati da un firewall o IDS.
 - **--mtu <numero>**: consente un maggiore controllo sulla dimensione dei pacchetti, specificando la dimensione massima di trasmissione, che deve essere un multiplo di 8.
 - **--scan-delay <tempo>ms**: introduce un ritardo tra l'invio dei pacchetti. Utile per reti instabili e per evitare il trigger di firewall/IDS basati sul tempo.

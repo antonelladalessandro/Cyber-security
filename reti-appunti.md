@@ -70,6 +70,24 @@ Esistono delle macchine collegate nella rete locale alle quale viene assegnato u
 
 **Broadcast**: comando inviato a tutti quelli presenti nella rete
 
+# MAC ADDRESS
+
+In informatica, un **indirizzo MAC** (*Media Access Control*), noto anche come "indirizzo fisico" o "indirizzo Ethernet", è un identificatore univoco di 48 bit assegnato a ogni dispositivo di rete conforme allo standard Ethernet. Questo codice è composto da 12 cifre esadecimali, solitamente divise in coppie (ad esempio, 00:1A:2B:3C:4D:5E).
+
+**Caratteristiche principali di un indirizzo MAC**
+- **Univocità:** Ogni scheda di rete ha un indirizzo MAC che la identifica in modo univoco all'interno della rete locale (LAN).
+- **Struttura:** Gli indirizzi MAC sono composti da due parti principali:
+  -  le prime tre coppie di cifre identificano il produttore del dispositivo.
+  -  le ultime tre coppie di cifre sono un identificativo specifico assegnato al dispositivo.
+- **Visibilità:** Un indirizzo MAC è visibile solo all'interno della **rete locale**. Questo aiuta a preservare la sicurezza, evitando che gli indirizzi fisici siano esposti pubblicamente.
+
+**Sicurezza e Spoofing dell’indirizzo MAC**
+Pur essendo unico per ciascun dispositivo, l'indirizzo MAC può essere "spoofato" o falsificato, ovvero un dispositivo può modificare il proprio MAC per far credere alla rete di essere un altro dispositivo. Questo fenomeno è noto come **MAC spoofing** e può avere implicazioni di sicurezza:
+  - **Accessi non autorizzati:** Alcuni sistemi di sicurezza, come firewall e access point, utilizzano indirizzi MAC per consentire o negare l'accesso alla rete. Se un dispositivo riesce a falsificare l’indirizzo MAC di un altro dispositivo autorizzato, potrebbe ottenere accesso a risorse altrimenti bloccate.
+  - **Limitazioni del MAC Spoofing:** Questa tecnica funziona solo all'interno della LAN (rete locale), poiché gli indirizzi MAC non sono visibili al di fuori di essa.
+
+
+
 # SMB
 
 **SMB** (Server Message Block Protocol) è un protocollo di comunicazione client-server utilizzato per condividere l'accesso a file, stampanti, porte seriali e altre risorse su una rete. I server mettono a disposizione file system e altre risorse (come stampanti e API) per i client sulla rete, i quali possono accedere a queste risorse condivise, oltre che ai propri dischi locali.

@@ -49,3 +49,10 @@ Le porte sono "sottoindirizzi" associati agli indirizzi IP e rappresentano canal
 **Well Known Ports**: da 1 a 1024, riservate per protocolli e servizi comuni (ad esempio, HTTP, FTP, DNS).
 
 Ogni servizio utilizza porte specifiche per stabilire e mantenere connessioni. Ad esempio, per un server web sono necessarie le porte **80** (HTTP) e **443** (HTTPS) per garantire l’accesso alle pagine web, mentre altre porte (come **22** per SSH) permettono l’accesso sicuro remoto alla macchina.
+
+### Port Forwarding
+Il Port Forwarding una tecnica di rete che permette il trasferimento di dati tra dispositivi tramite una porta di comunicazione specifica. Viene utilizzata per consentire a utenti esterni di raggiungere un host con un indirizzo IP privato all'interno di una rete locale, utilizzando una porta specifica sull'IP pubblico del router della rete.
+
+In altre parole, **il port forwarding consente di indirizzare traffico esterno verso un dispositivo o servizio specifico all'interno della rete**. Immagina di avere un dispositivo connesso al router di casa che esegue un servizio (come un server di gioco o una videocamera di sorveglianza) e a cui vuoi accedere dall'esterno, tramite internet. Normalmente, il router blocca le connessioni esterne per proteggere la rete, ma con il port forwarding puoi "aprire una porta" specifica, istruisce il router a reindirizzare tutto il traffico che arriva su quella porta verso un dispositivo specifico nella rete interna.
+
+In pratica, il router agisce come un ponte, ricevendo le informazioni dall'esterno e reindirizzandole verso il dispositivo interno. Questo permette di accedere in modo sicuro e diretto a servizi interni alla rete, bypassando le limitazioni del firewall del router per la porta specifica.

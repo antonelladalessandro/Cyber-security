@@ -226,9 +226,6 @@ Se riscontri problemi nella navigazione (ad esempio, siti non caricati correttam
 - **Su macOS:** `sudo killall -HUP mDNSResponder`
 - **Su Linux:** `sudo systemd-resolve --flush-caches` o riavviare il servizio DNS.
 
----
-
-Ecco una versione rivisitata dei tuoi appunti sulle VPN (Virtual Private Network):
 
 ---
 
@@ -324,4 +321,4 @@ Un URL (Uniform Resource Locator) è l’indirizzo web che consente di accedere 
 
 7. **Fragmento**: Inizia con il simbolo “#” e punta a una sezione specifica della pagina, come un titolo o una tabella. Anche i frammenti devono essere gestiti in modo sicuro per prevenire attacchi.
 
-**In sintesi**, l’URL è un indirizzo complesso e dettagliato, fondamentale per la navigazione web e che richiede attenzione alla sicurezza per proteggere l’utente e le risorse web.
+

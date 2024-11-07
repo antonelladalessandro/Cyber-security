@@ -214,6 +214,27 @@ Esistono diverse categorie di script, alcune delle più utili includono:
 - **brute:** Tentano di eseguire un attacco **brute force** per ottenere le credenziali dei servizi in esecuzione
 - **discovery:** Tentano di raccogliere ulteriori informazioni sulla rete interrogando i servizi in esecuzione (ad esempio, interrogare un server **SNMP**).
 
+Esempi di scripts:
+
+Questi due script fanno parte dell’Nmap Scripting Engine (NSE) e servono per raccogliere informazioni su una rete Windows, in particolare per quanto riguarda il protocollo SMB (Server Message Block), che è usato per la condivisione di file, stampanti e altre risorse in rete.
+
+```
+smb-enum-users
+
+- **Scopo**: Questo script è utilizzato per elencare gli utenti presenti su un server SMB.
+- **Funzionamento**: Esegue una query al server SMB per richiedere informazioni sugli account utente configurati. Ritorna una lista di utenti, con alcuni dettagli se sono disponibili (come i nomi degli utenti).
+- **Utilità**: Serve a raccogliere informazioni di base sugli utenti di un dominio o di un server Windows, utile per comprendere chi potrebbe avere accesso a determinate risorse e per valutare possibili target in una rete.
+
+
+```
+smb-enum-shares
+```
+- **Scopo**: Questo script individua e riporta le condivisioni di rete (o "shares") accessibili tramite SMB.
+- **Funzionamento**: Tenta di connettersi alle condivisioni di rete, elencando le risorse che il server SMB mette a disposizione per l’accesso remoto. Le condivisioni possono includere cartelle pubbliche, file condivisi o altre risorse.
+- **Utilità**: Utile per vedere quali risorse di rete sono esposte e potenzialmente accessibili agli utenti. Avere visibilità sulle condivisioni può aiutare a valutare eventuali vulnerabilità, soprattutto se qualche share contiene dati sensibili o è configurato con permessi eccessivamente permissivi.
+
+
+
 ### TELNET
 
 Il protocollo TELNET, sviluppato nel 1969, permette di comunicare con un sistema remoto tramite interfaccia a riga di comando (CLI) e utilizza la porta predefinita 23. Dal punto di vista della sicurezza, TELNET non cripta i dati, quindi invia in chiaro credenziali come username e password, rendendole vulnerabili. SSH (Secure SHell) è un’alternativa più sicura.

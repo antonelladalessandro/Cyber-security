@@ -284,3 +284,24 @@ La sintassi di Enum4Linux è semplice: enum4linux [opzioni] ip
 	• -P — ottiene informazioni sulla policy password
 	• -G — ottiene la lista dei gruppi e dei membri
  	• -a — esegue tutte le opzioni sopra (enumerazione completa di base)
+
+# WEB APPLICATI0N
+
+Un'applicazione web può essere paragonata a un pianeta: come un astronauta esplora la superficie di un pianeta, un utente esplora una web app tramite un browser. La “superficie” rappresenta il front end, ciò che l’utente può vedere e con cui interagire, mentre il back end è il “sottosuolo” che svolge compiti invisibili ma essenziali per far funzionare l’app.
+
+### Front End
+
+Il front end è la parte visibile e interattiva dell'app, realizzata con:
+
+- **HTML**: È il “DNA di base” della pagina web, dando istruzioni al browser su cosa mostrare.
+- **CSS**: Aggiunge stile, colori e layout, come le caratteristiche visive di un organismo.
+- **JavaScript**: Rende le pagine dinamiche, simile al “cervello” che consente agli elementi di reagire agli input dell’utente.
+
+### Back End
+
+Il back end comprende elementi nascosti ma cruciali:
+
+- **Database**: Come una libreria del pianeta, conserva e gestisce informazioni per l’app.
+- **Infrastruttura**: Include server e reti che supportano il funzionamento del sito, come strade e risorse del pianeta.
+- **WAF (Web Application Firewall)**: Protegge il sito da minacce esterne, simile all'atmosfera del pianeta che scherma dai raggi dannosi.
+

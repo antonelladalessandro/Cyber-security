@@ -150,6 +150,8 @@ In un pacchetto TCP, i flag sono utilizzati per controllare e gestire la comunic
 - **SYN (Synchronize):** Utilizzato per iniziare il processo di handshake TCP.
 - **FIN (Finish):** Indica la fine di una connessione TCP, segnando che la comunicazione è terminata.
 
+![immagine](https://github.com/user-attachments/assets/5ece7a05-55a8-4a6d-a6b8-053b62b1af69)
+
 ---
 
 # SMB

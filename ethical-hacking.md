@@ -200,6 +200,20 @@ In tutte queste scansioni, se una porta è aperta non viene ricevuta risposta. T
 
 L’obiettivo principale di queste scansioni è evitare i firewall, poiché molti firewall bloccano i pacchetti SYN (che avviano le connessioni), mentre permettono i pacchetti senza SYN. Tuttavia, i sistemi IDS moderni sono in grado di rilevare queste tecniche, quindi non sempre garantiscono il 100% di successo.
 
+#### NSE
+
+Il **Nmap Scripting Engine (NSE)** è una potente estensione di Nmap che ne amplia notevolmente le funzionalità. Gli **NSE Scripts** sono scritti in **Lua** e possono essere utilizzati per una varietà di scopi, come scansionare vulnerabilità o automatizzare gli exploit per queste. NSE è particolarmente utile per il **reconnaissance**, ma è importante considerare la vastità della sua libreria di script.
+
+Esistono diverse categorie di script, alcune delle più utili includono:
+
+- **safe:** Non influenzano il target
+- **intrusive:** Non sicuri, possono influenzare il target
+- **vuln:** Scansionano per vulnerabilità
+- **exploit:** Tentano di sfruttare una vulnerabilità
+- **auth:** Tentano di bypassare l'autenticazione di servizi attivi (ad esempio, accedere a un server FTP in modo anonimo)
+- **brute:** Tentano di eseguire un attacco **brute force** per ottenere le credenziali dei servizi in esecuzione
+- **discovery:** Tentano di raccogliere ulteriori informazioni sulla rete interrogando i servizi in esecuzione (ad esempio, interrogare un server **SNMP**).
+
 ### TELNET
 
 Il protocollo TELNET, sviluppato nel 1969, permette di comunicare con un sistema remoto tramite interfaccia a riga di comando (CLI) e utilizza la porta predefinita 23. Dal punto di vista della sicurezza, TELNET non cripta i dati, quindi invia in chiaro credenziali come username e password, rendendole vulnerabili. SSH (Secure SHell) è un’alternativa più sicura.
